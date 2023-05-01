@@ -12,10 +12,8 @@
 		<h1>Inicio</h1>
 		<p th:text="${mensaje}"></p>
 
-		<!-- <p><a th:href="@{/add}">Añadir Imagen</a></p> -->
-
-		<div class="d-flex p-2" th:if="${images!=null and !images.empty}">
-			<div th:each="img : ${images}" class="card m-1" style="width: 18rem;">
+		<div class="d-flex flex-wrap p-2" th:if="${images!=null and !images.empty}">
+			<div th:each="img : ${images}" class="card col-2 m-1" style="width: 18rem;">
 				<img class="card-img-top" width="200px"
 					th:src="@{https://storage.googleapis.com/}+${img.bucket}+@{/}+${img.name}" alt="image cap">
 				<div class="card-body">
@@ -25,6 +23,7 @@
 				</div>
 			</div>
 		</div>
+    
 		<p th:if="${images==null or images.empty}">No hay Imágenes</p>
 
 	</div>
