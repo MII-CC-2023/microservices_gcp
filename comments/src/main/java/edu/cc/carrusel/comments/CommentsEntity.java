@@ -1,7 +1,5 @@
 package edu.cc.carrusel.comments;
 
-
-
 import java.io.Serializable;
 import javax.persistence.*;
 

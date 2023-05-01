@@ -109,7 +109,7 @@ gcloud functions deploy check-upload-bucket \
     --runtime python311 \
     --entry-point insert_data \
     --trigger-event google.storage.object.finalize \
-    --trigger-resource bucket-cc2023 \
-    --service-account cloud-computing-384514@appspot.gserviceaccount.com \
+    --trigger-resource tu-bucket-cc2023 \
+    --service-account tu_proyecto_5555@appspot.gserviceaccount.com \
     --env-vars-file env_variables.yaml
 ```
