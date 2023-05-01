@@ -6,7 +6,7 @@ Este código se corresponde con una aplicación en Spring que consiste en un vis
 La estructura se corresponde con una aplicación Spring Boot MVC.
 
 ### Modelos
-Se han implementado dos entidades: images (src/main/java/edu/cc/carruse/images/) y comments (src/main/java/edu/cc/carruse/images/), con sus capas de acceso a datos (DAO) y de servicios (Service).
+Se han implementado dos entidades: images (src/main/java/edu/cc/carruse/images/) y comments (src/main/java/edu/cc/carruse/comments/), con sus capas de acceso a datos (DAO) y de servicios (Service).
 
 ### Controlador
 
