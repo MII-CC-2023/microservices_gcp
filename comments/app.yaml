@@ -1,0 +1,20 @@
+service: default
+runtime: java11
+
+# ATTENTION 
+# You must create the file env_variables.yaml with the next four enviroment variables: 
+# DB_HOST, DB_NAME, DB_USER and DB_PASS
+# env_variables:
+#   DB_HOST = ... (IP or DNS host)
+#   DB_NAME = ... (Database name)
+#   DB_USER = ... (Database user)
+#   DB_PASS = ... (Database password)
+includes:
+- env_variables.yaml
+
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
