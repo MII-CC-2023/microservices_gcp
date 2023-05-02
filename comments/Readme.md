@@ -56,7 +56,7 @@ Se ha creado un controlador (ImagesController.java) que atenderá las siguientes
 
 ### Vistas
 
-Se ha utilizado Thymeleaf como sistema de plantillas y Boostrap.
+Se ha utilizado Thymeleaf como sistema de plantillas y Boostrap para mejorar la interfaz.
 
 #### index.html
 
@@ -146,8 +146,6 @@ Se ha utilizado Thymeleaf como sistema de plantillas y Boostrap.
         <hr style="height:2px; width:100%; border-width:0; color:blue; background-color:blue">
         <h2>Añadir Comentario</h2>
 
-
-
         <form th:action="@{/savecomment}" method="post" th:object="${comment}">
 
             <input type="hidden" name="id" th:field="*{id}" />
@@ -160,7 +158,6 @@ Se ha utilizado Thymeleaf como sistema de plantillas y Boostrap.
             </div>
             <p><input class="btn btn-primary btn-block" type="submit" value="Enviar" /></p>
         </form>
-
         
     </div>
 
@@ -171,6 +168,4 @@ Se ha utilizado Thymeleaf como sistema de plantillas y Boostrap.
 
 </html>
 ```
-
-
 
