@@ -1,6 +1,42 @@
 # App Engine con Spring Boot
 
-Este código se corresponde con una aplicación en Spring que consiste en un visualizador de las imágenes registradas en la base de datos que previamente fueron subidas al Bucket de Google Cloud Storage. La aplicación será desplegada como el servicio por defecto (default) de Google App Engine. 
+Este código se corresponde con una aplicación en Spring que muestra las imágenes registradas en la base de datos que previamente fueron subidas al Bucket de Google Cloud Storage. La aplicación será desplegada como el servicio por defecto (default) de Google App Engine. 
+
+## app.yaml
+
+```yaml
+service: default
+runtime: java11
+
+# ATTENTION 
+# You must create the file env_variables.yaml with the next four enviroment variables: 
+# DB_HOST, DB_NAME, DB_USER and DB_PASS
+# env_variables:
+#   DB_HOST = ... (IP or DNS host)
+#   DB_NAME = ... (Database name)
+#   DB_USER = ... (Database user)
+#   DB_PASS = ... (Database password)
+includes:
+- env_variables.yaml
+
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+```
+
+Como se muestra en el fichero app.yaml será necesario crear un fichero env_variables.yaml con las variables de entorno necesarias para conexion con la base de datos (Este fichero ha sido excluido intencionadamente, mediante .gitignore, para no publicar datos sensibles en un repositorio de código). El fichero debe contener:
+
+```yaml
+env_variables:
+  DB_HOST: "..."
+  DB_NAME: "..."
+  DB_USER: "..."
+  DB_PASS: "..."
+```
+
 
 ## Estructura
 La estructura se corresponde con una aplicación Spring Boot MVC.
@@ -20,7 +56,7 @@ Se ha creado un controlador (ImagesController.java) que atenderá las siguientes
 
 ### Vistas
 
-Se ha utilizado Thymeleaf como sistema de plantillas. Se ha utilizado Boostrap.
+Se ha utilizado Thymeleaf como sistema de plantillas y Boostrap.
 
 #### index.html
 
@@ -62,8 +98,6 @@ Se ha utilizado Thymeleaf como sistema de plantillas. Se ha utilizado Boostrap.
 
 </html>
 ```
-
-
 
 #### see_image.html
 

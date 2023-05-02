@@ -26,10 +26,10 @@ Antes de desplegar la aplicación es necesario crear el fichero env_variables.ya
 
 ```
 env_variables:
-  DB_HOST: ...
-  DB_NAME: ...
-  DB_USER: ...
-  DB_PASS: ...
+  DB_HOST: "..."
+  DB_NAME: "..."
+  DB_USER: "..."
+  DB_PASS: "..."
 ```
 Luego puedes proceder con el despliegue con:
 
